@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Share+Tech+Mono&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'KhM';
+    src: url('./assets/fonts/KHMenu.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'KhMB';
+    src: url('./assets/fonts/KHMenuBold.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'KhMBI';
+    src: url('./assets/fonts/KHMenuBoldItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'KhMI';
+    src: url('./assets/fonts/KHMenuItalic.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'KhT';
+    src: url('./assets/fonts/KHTitle.woff2') format('woff2');
+}
+
+html, body {
+    background-image: url('assets/images/ReMix Style Wallpaper.jpg');
+    background-size: auto;
+    font-family: 'KhM', monospace;
+    font-weight: bold;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to left, transparent, black);
+    pointer-events: none;
+}
+.main-content {
+    position: relative;
+    z-index: 1;
+}
+
+.animate-section {
+    animation: fadeIn 1s ease-in-out;
+    overflow: hidden;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translatey(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.custom-navbar {
+    font-family: 'KhT', monospace;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(to bottom, #240F30, #AD5ADE);
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 57% 70%, 50% 100%, 0% 100%);
+    animation: slideDown 1s ease-in-out;
+}
+
+.custom-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: linear-gradient(to top, #240F30, #AD5ADE);
+    clip-path: polygon(0 30%, 43% 30%, 50% 0, 100% 0, 100% 100%, 0% 100%);
+    animation: slideUp 1s ease-in-out;
+}
+
+.custom-button {
+    font-family: 'KhM', monospace;
+    position: static;
+    width: 20rem;
+    height: 4rem;
+    padding: 0 2rem;
+    border: 5px solid black;
+    border-radius: 0 25px 0 25px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(260deg, #8C48B3 0%, #5B257B 35%, #050008 94%);
+    transition: all 1s ease;
+    overflow: visible;
+    box-sizing: border-box;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.custom-button:hover {
+    background: #3c8944;
+    color: #ffffff;
+    border: 5px solid #9be07c;
+    transform: translateX(4rem);
+}
+
+.custom-button::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    background-image: url('assets/images/Munny Orb.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease, left 0.3s ease;
+    z-index: 1;
+}
+
+.custom-button:hover::before {
+    opacity: 1;
+    left: -20px;
+}
+
+.active-button {
+    font-family: 'KhMI', monospace;
+    background: #3c8944;
+    color: #ffffff;
+    border: 5px solid #9be07c;
+    transform: translateX(2rem);
+}
+
+.active-button::before {
+    opacity: 1;
+    left: -20px;
+}
+
+.custom-border{
+    border: 0.5rem solid #5B257B;
+    border-right: none;
+    border-radius: 25px 0 0 25px;
+}
+
+.badge{
+    transform: rotate(-15deg); /* Adjust the angle as needed */
+    display: inline-block; /* Ensures proper rotation */
+}
+
+@keyframes popUp {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.pop-up {
+    animation: popUp 1s infinite;
+    transform: rotate(-15deg);
+    display: inline-block;
+}
+
+.codenames {
+    position: static;
+    width: calc(20rem - 10px);
+    height: calc(4rem - 10px);
+    padding: 5px;
+    border-radius: 0 25px 0 25px;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(80deg, #8C48B3 0%, #5B257B 35%, #050008 94%);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+
