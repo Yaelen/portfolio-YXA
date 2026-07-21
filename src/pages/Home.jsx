@@ -17,23 +17,11 @@ function Home() {
         setTimeout(() => {
             setActiveSection(index);
             setAnimate(true);
-        }, 100);
-    };
-
-    const handleScroll = (event) => {
-        const delta = event.deltaY;
-        if (delta > 0 && activeSection < sections.length - 1) {
-            setActiveSection((prev) => prev + 1);
-        } else if (delta < 0 && activeSection > 0) {
-            setActiveSection((prev) => prev - 1);
-        }
+        }, 50);
     };
 
     return (
-        <section
-            className="flex items-center text-white min-h-screen"
-            onWheel={handleScroll}
-        >
+        <section className="flex items-center text-white min-h-screen">
             <div className="w-1/3 flex flex-col space-y-4">
                 {sectionLabels.map((label, index) => (
                     <button

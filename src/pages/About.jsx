@@ -5,7 +5,7 @@ function About() {
         { rank: "S",name: "HTML", icon: "/src/assets/icons/html.png" },
         { rank: "A",name: "TailwindCSS", icon: "/src/assets/icons/tailwind.png" },
         { rank: "B",name: "PHP", icon: "/src/assets/icons/php.png" },
-        { rank: "S",name: "React", icon: "/src/assets/icons/react.png" },
+        { rank: "S",name: "React", icon: "../src/assets/icons/react.png" },
     ];
 
     return (
